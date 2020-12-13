@@ -1,0 +1,16 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+*.gradle
+build.gradle
+gradle/wrapper/gradle-wrapper.properties
+
+/app/app.iml
+/BoitePhilippe.iml
+/gradle.properties
+/app/release/app.aab
+.idea
