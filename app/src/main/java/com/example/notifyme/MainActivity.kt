@@ -75,12 +75,14 @@ open class MainActivity() : AppCompatActivity() {
     private fun getNotificationBuilder(): NotificationCompat.Builder? {
         val notificationIntent = Intent(this, MainActivity::class.java)
         val notificationPendingIntent = PendingIntent.getActivity(this, NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        val notificationPendingIntentClearNotification = PendingIntent.getActivity(this, NOTIFICATION_ID, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT)
 
         return NotificationCompat.Builder(this, PRIMARY_CHANNEL_ID)
                 .setContentTitle("You've been notified!")
                 .setContentText("This is your notification text.")
                 .setSmallIcon(R.drawable.ic_notif)
                 .setContentIntent(notificationPendingIntent)
+                .setDeleteIntent(notificationPendingIntentClearNotification)
                 .setAutoCancel(true).setContentIntent(notificationPendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
